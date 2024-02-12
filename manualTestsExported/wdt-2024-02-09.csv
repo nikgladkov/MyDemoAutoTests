@@ -1,0 +1,41 @@
+v2.id,title,description,preconditions,postconditions,tags,priority,severity,type,behavior,automation,status,is_flaky,layer,steps_type,steps_actions,steps_result,steps_data,milestone_id,milestone,suite_id,suite_parent_id,suite,suite_without_cases,parameters
+,,,,,,,,,,,,,,,,,,,,4,,Authorization,1
+11,"Sign in with Default test user for prod",,,,"SignIn,Account,Authorization",high,critical,smoke,positive,automated,draft,no,e2e,classic,"1. ""Open the Main Page""
+2. ""Click on \""Sign In\"" in the header""
+3. ""Click on \""Sign in or create account\"" button""
+4. ""Enter the user email""
+5. ""Click \""Continue\"" button""
+6. ""Check \""Enter your password\"" option""
+7. ""Enter password""
+8. ""Click \""Sign In\"" button""
+9. ""Check the header""
+10. ""Click on user name in the header""
+11. ""Click \""Account\"" link in the menu""
+","1. """"
+2. """"
+3. ""account\/login page is opened""
+4. """"
+5. ""\""Welcome back!\"" is opened""
+6. """"
+7. """"
+8. ""Main page is opened""
+9. ""User name is shown in the Header""
+10. """"
+11. ""User account page is opened""
+","1. ""Base URL""
+2. """"
+3. """"
+4. ""Email""
+5. """"
+6. """"
+7. ""Password""
+8. """"
+9. """"
+10. """"
+11. """"
+",,,4,,Authorization,,"Email:nikgladkovrs@gmai.com
+Password:REbE5kzT487Y
+Base URL:https://www.walmart.com/
+Browser:Chrome
+Mode:Desktop
+Mode:Mobile"
