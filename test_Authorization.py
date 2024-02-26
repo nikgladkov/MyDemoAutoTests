@@ -3,8 +3,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 #import general functions for tests
-from generalFunctionsForTests import setCurrentTestDriver
-from generalFunctionsForTests import assertTryExcept
+from commonFunctions import setCurrentTestDriver
+from commonFunctions import assertTryExcept
 
 #import setup and current Test Run Default Parameters - see setup.yaml
 import yaml
@@ -22,7 +22,7 @@ baseURL = setup[currentTestSiteUrl]
 from pagesSelectors.accountPages import *
 from pagesSelectors.mainPage import *
 
-def test_smoke_SignIn():
+def test_SmokeRegisteredUserCanLogin():
     #ID: 11
     #URL: https://app.qase.io/case/wdt-11
 

@@ -3,7 +3,9 @@ import os
 from selenium import webdriver
 import time
 from datetime import datetime
+from datetime import date
 import sys
+import csv
 
 #import setup and current Test Run Default Parameters - see setup.yaml
 import yaml
@@ -57,3 +59,22 @@ def assertTryExcept(driver, current, expected):
     except AssertionError as e:
         makeScreenshot(driver, currentReportsDirectory)
         sys.exit(1)
+
+def saveURLScreenshotInfoToTestReport(driver,testName,testRunid,StepInfo="-",testResult="-"):
+    curTime = datetime.now().strftime("%H%M")
+    curTestRunName = testName + str(date.today()) + "_" + testRunid
+    curStepInfo = StepInfo
+    curTestResult = testResult
+    curUrl = driver.current_url
+    curFilePath = makeScreenshot(driver, currentReportsDirectory)
+
+    data = [
+        [curTime,curTestRunName,curStepInfo,curTestResult,curUrl,curFilePath]
+    ]
+
+    file_path = f"{currentReportsDirectory}/testReport.csv"
+
+    with open(file_path, mode='a+', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows(data)
+        file.close
